@@ -28,7 +28,7 @@ report:
   mode: "daily" # 可选: "daily"|"incremental"|"current"
   rank_threshold: 5 # 排名高亮阈值
   sort_by_position_first: false # 排序优先级：true=先按配置位置排序，false=先按热点条数排序
-  max_news_per_keyword: 0 # 每个关键词最大显示数量，0=不限制
+  max_news_per_keyword: 30 # 每个关键词最大显示数量，0=不限制
 
 notification:
   enable_notification: true # 是否启用通知功能，如果 false，则不发送手机通知
@@ -53,7 +53,7 @@ notification:
       start: "09:00"  # 推送时间窗口开始（北京时间）
       end: "18:00"    # 推送时间窗口结束（北京时间）
     once_per_day: false  # 每天在时间窗口内只推送一次，如果 false，则窗口内每次执行都推送
-    push_record_retention_days: 7  # 推送记录保留天数
+    push_record_retention_days: 30  # 推送记录保留天数
 
   # ⚠️⚠️⚠️ 重要安全警告 / IMPORTANT SECURITY WARNING ⚠️⚠️⚠️
   #
@@ -91,9 +91,9 @@ notification:
 
 # 用于让关注度更高的新闻在更前面显示，即用算法重新组合不同平台的热搜排序形成你侧重的热搜，合起来是 1 就行
 weight:
-  rank_weight: 0.6 # 排名权重
+  rank_weight: 0.1 # 排名权重
   frequency_weight: 0.3 # 频次权重
-  hotness_weight: 0.1 # 热度权重
+  hotness_weight: 0.6 # 热度权重
 
 # name 可以定义任意名称，只具有显示作用，即使项目运行了几天后，忽然改掉 name 也不会影响代码的正常运行
 platforms:
@@ -101,13 +101,13 @@ platforms:
     name: "今日头条"
   - id: "baidu"
     name: "百度热搜"
-  - id: "wallstreetcn-hot"
+#  - id: "wallstreetcn-hot"
     name: "华尔街见闻"
-  - id: "thepaper"
+#  - id: "thepaper"
     name: "澎湃新闻"
   - id: "bilibili-hot-search"
     name: "bilibili 热搜"
-  - id: "cls-hot"
+#  - id: "cls-hot"
     name: "财联社热门"
   - id: "ifeng"
     name: "凤凰网"
